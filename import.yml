@@ -1,0 +1,41 @@
+---
+repositories:
+    - name: hello-torero
+      description: Get started with torero
+      url: https://github.com/torerodev/hello-torero.git
+      reference: main
+      tags:
+        - demo
+        - torero
+
+services:
+    - name: hello-ansible
+      type: ansible-playbook
+      description: Ansible hello world
+      working-directory: hello-ansible
+      playbooks:
+        - hello-ansible.yml
+      repository: hello-torero
+      tags:
+        - demo
+        - ansible
+
+    - name: hello-python
+      type: python-script
+      description: Python hello world
+      filename: hello-python.py
+      working-directory: hello-python
+      repository: hello-torero
+      tags:
+        - demo
+        - python
+
+    - name: hello-opentofu
+      type: opentofu-plan
+      description: OpenTOFU hello world
+      working-directory: hello-opentofu
+      repository: hello-torero
+      tags:
+        - demo
+        - opentofu
+...
